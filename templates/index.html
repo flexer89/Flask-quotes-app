@@ -8,16 +8,60 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 </head>
 <body>
   <header class="container"> 
     <h1>Random Sentences</h1>
   </header>
   <main class="container">
+    <div id="photo">
       <p>{{ sentence }}</p>
       <h2>{{ author }}</h2>
+    </div>
+    <div class="button-div">
       <a href="/">Get Quote</a>
+      <button onclick="takeshot()">Copy</button>
+    </div>
   </main>
+  
+    <script type="text/javascript">
+      function takeshot() {
+          let div = document.getElementById('photo');
+  
+          html2canvas(div).then(function (canvas) {
+              // Konwertuj canvas na data URL
+              let dataURL = canvas.toDataURL();
+  
+              // Konwertuj data URL na Blob
+              let blob = dataURLToBlob(dataURL);
+  
+              // Utwórz obiekt ClipboardItem na podstawie Blob
+              let item = new ClipboardItem({ 'image/png': blob });
+  
+              // Skopiuj obiekt ClipboardItem do schowka
+              navigator.clipboard.write([item]).then(function () {
+                  console.log('Zrzut ekranu skopiowany do schowka.');
+              }).catch(function (error) {
+                  console.error('Błąd podczas kopiowania zrzutu ekranu do schowka:', error);
+              });
+          });
+      }
+  
+      // Funkcja do konwersji data URL na Blob
+      function dataURLToBlob(dataURL) {
+          let arr = dataURL.split(',');
+          let mime = arr[0].match(/:(.*?);/)[1];
+          let bstr = atob(arr[1]);
+          let n = bstr.length;
+          let u8arr = new Uint8Array(n);
+          while (n--) {
+              u8arr[n] = bstr.charCodeAt(n);
+          }
+          return new Blob([u8arr], { type: mime });
+      }
+  </script>
+  
   <footer class="container">
     <p>Copyright &copy; 2023</p>
   </footer>
