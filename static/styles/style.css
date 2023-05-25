@@ -16,6 +16,10 @@ body {
   height: 100vh;
 }
 
+#photo {
+  padding: 50px;
+  background-color: #d9455b;
+}
 
 .container {
   margin: 0 auto;
@@ -57,10 +61,34 @@ a {
   text-decoration: none;
   font-weight: bold;
   display: block;
+  transition: background-color 0.3s ease;
+  width: 140px;
+  margin: 0 15px;
+}
+button {
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 15px;
+  padding: 15px 30px;
+  font-size: 22px;
+  border: none;
+  background-color: #fff;
+  color: #d9455b;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  width: 140px;
+  transition: background-color 0.3s ease;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+.button-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-a:hover {
-  
+a:hover, button:hover {
+  opacity: 0.9;
 }
 
 
