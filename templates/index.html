@@ -7,21 +7,16 @@
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="container">
+  <header class="container"> 
     <h1>Random Sentences</h1>
   </header>
   <main class="container">
-    <section>
-      <h2>Here is a random sentence for you:</h2>
       <p>{{ sentence }}</p>
-      <p>{{ author }}</p>
-    </section>
-    <section>
-      <a href="/">Get another sentence</a>
-    </section>
+      <h2>{{ author }}</h2>
+      <a href="/">Get Quote</a>
   </main>
   <footer class="container">
     <p>Copyright &copy; 2023</p>

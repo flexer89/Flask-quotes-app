@@ -14,12 +14,12 @@ def index():
 
     # Randomly select a sentence.
     selected_sentence = random.choice(sentences)
-    sentence = selected_sentence[0]
-    author = selected_sentence[1]
+    sentence = selected_sentence[1]
+    author = selected_sentence[0]
 
     # Render the template with the random sentence.
     return render_template("index.html", sentence=sentence, author=author)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0")
