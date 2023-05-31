@@ -26,12 +26,53 @@ body {
   padding: 20px;
   text-align: center;
 }
-
+#quoteForm {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  align-items: center;
+}
+#quoteForm input[type=text] {
+  padding: 10px;
+  font-size: 20px;
+  width: 100%;
+}
+#quoteForm textarea {
+  resize: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 20px 0;
+  font-family: 'PT Sans Narrow';
+  height: 150px;
+}
+#quoteForm button {
+  width: 50%;
+}
 
 header.container h1 {
   font-size: 32px;
   text-align: center;
   padding: 20px;
+}
+header.container h1 a {
+  margin: 0;
+  padding: 0;
+  background-color: #d9455b;
+  color:#fff;
+  font-size: 32px;
+}
+header.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+header a {
+  padding: 10px;
+  width: auto;
+  line-height: 30px;
+  align-self: center;
+  font-size: 60px;
 }
 
 main.container {
